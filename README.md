@@ -11,7 +11,7 @@ The front end can be used to display the buttons themselves. Available social me
 
 An info button that links to the heise article can be added.
 
-![Shariff Icons](https://raw.githubusercontent.com/langsci/lsp-artwork/master/shariff/shariff-icons.PNG)
+![Shariff icons](https://raw.githubusercontent.com/langsci/lsp-artwork/master/shariff/shariff-icons.PNG)
 
 ### Settings
 The following settings are available: 
@@ -20,9 +20,11 @@ The following settings are available:
 - select theme (Standard, White, Grey)
 - add backend-url
 
-![Shariff Settings](https://raw.githubusercontent.com/langsci/lsp-artwork/master/shariff/shariff-settings.PNG)
+![Shariff settings](https://raw.githubusercontent.com/langsci/lsp-artwork/master/shariff/shariff-settings.PNG)
 
 ### Display numbers
+
+![Shariff icons with numbers](https://raw.githubusercontent.com/langsci/lsp-artwork/master/shariff/shariff-icons-numbers.PNG)
 
 To display the numbers of likes, tweets and plus-ones, shariff uses a backend. This plugin uses the [php backend] (http://github.com/heiseonline/shariff-backend-php). 
 
