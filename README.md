@@ -24,7 +24,7 @@ The following settings are available:
 
 ### Display numbers
 
-To display the numbers of likes, tweets and plus-ones shariff uses a backend. This plugin uses the [php backend] (http://github.com/heiseonline/shariff-backend-php). 
+To display the numbers of likes, tweets and plus-ones, shariff uses a backend. This plugin uses the [php backend] (http://github.com/heiseonline/shariff-backend-php). 
 
 To set up the backend you need to have access to the code. Follow the steps:
  1. Copy the folder shariff-backend to the top level of your OMP installation.
