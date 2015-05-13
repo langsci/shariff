@@ -1,0 +1,14 @@
+{
+	"cache": {
+		"ttl": 60,
+		"cacheDir": "/shariff-backend/cache"
+	},
+	"domain": "localhost/langsci",
+	"services": [
+		"GooglePlus",
+		"Twitter",
+		"Facebook",
+		"Pinterest",
+		"Flattr"
+	]
+}

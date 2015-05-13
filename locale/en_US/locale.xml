@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE locale SYSTEM "../../../../../lib/pkp/dtd/locale.dtd">
+
+<!--
+  * plugins/generic/shariff/locale/en_US/locale.xml
+  *
+  * Copyright (c) 2015 Language Science Press
+  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
+  *
+  * Localization strings for this plugin.
+  *
+  -->
+
+<locale name="en_US" full_name="U.S. English">
+	
+	<message key="plugins.generic.shariff.displayName">Shariff Plugin</message>
+	<message key="plugins.generic.shariff.description">Add social media buttons in c't style (heise.de/-2463330) to the footer of each page.</message>
+	<message key="plugins.generic.shariff.title">Shariff Plugin</message>
+	
+	<message key="plugins.generic.shariff.settings.title">Settings of the Shariff Plugin</message>
+	<message key="plugins.generic.shariff.settings">Settings</message>
+	<message key="plugins.generic.shariff.settings.intro">I am an intro.</message>
+	
+	<message key="plugins.generic.shariff.settings.services">Services</message>
+	<message key="plugins.generic.shariff.settings.language">Language</message>
+	<message key="plugins.generic.shariff.settings.backend">Backend URL</message>
+	<message key="plugins.generic.shariff.settings.backend.info">Only for admin: Add the shariff-backend folder to the root of your OMP installation, change the domain in shariff.json and make the cache folder readable. Insert the path here like "http://my-press.de/shariff-backend".</message>
+	<message key="plugins.generic.shariff.settings.theme">Theme</message>
+	<message key="plugins.generic.shariff.settings.orientation">Orientation</message>
+	
+	<message key="plugins.generic.shariff.form.facebook">Facebook</message>
+	<message key="plugins.generic.shariff.form.twitter">Twitter</message>
+	<message key="plugins.generic.shariff.form.googleplus">Google+</message>
+	<message key="plugins.generic.shariff.form.mail">Mail</message>
+	<message key="plugins.generic.shariff.form.info">Info</message>
+	
+	<message key="plugins.generic.shariff.form.language">Select a language</message>	
+	<message key="plugins.generic.shariff.form.language.de">Deutsch</message>	
+	<message key="plugins.generic.shariff.form.language.en">English</message>
+	<message key="plugins.generic.shariff.form.language.es">Espanol</message>	
+	
+	<message key="plugins.generic.shariff.form.theme">Select a theme</message>
+	<message key="plugins.generic.shariff.form.theme.standard">Standard</message>
+	<message key="plugins.generic.shariff.form.theme.grey">Grey</message>
+	<message key="plugins.generic.shariff.form.theme.white">White</message>
+	
+	<message key="plugins.generic.shariff.form.orientation">Select an orientation</message>
+	<message key="plugins.generic.shariff.form.orientation.vertical">vertical</message>
+	<message key="plugins.generic.shariff.form.orientation.horizontal">horizontal</message>
+	
+	<message key="plugins.generic.shariff.form.saved">Your changes in the Shariff Plugin Settings have been saved.</message>
+
+	
+	
+</locale>
