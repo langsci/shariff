@@ -5,9 +5,9 @@ This plugin adds social media buttons to the footer of each page. It implements 
 ## Usage
 
 The front end can be used to display the buttons themselves. Available social media services are:
-- facebook
-- twitter
-- googleplus
+- Facebook
+- Twitter
+- Google+
 
 An info button that links to the heise article can be added.
 
@@ -28,6 +28,6 @@ To display the numbers of likes, tweets and plus-ones shariff uses a backend. Th
 
 To set up the backend you need to have access to the code. Follow the steps:
  1. Copy the folder shariff-backend to the top level of your OMP installation.
- 2. Make the folder chache writeable.
+ 2. Make the folder cache writeable.
  3. Change the domain in shariff.json to your domain.
  4. Add the url of the backend at the settings page.
