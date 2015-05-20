@@ -6,9 +6,9 @@
  * Copyright (c) 2015 Language Science Press
  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
  *
- * @package plugins.generic.staticPages
+ * @package plugins.generic.shariff
  * @class ShariffPlugin
- * Static pages plugin main class
+ * Shariff plugin main class
  */
 
 import('lib.pkp.classes.plugins.GenericPlugin');
@@ -88,16 +88,17 @@ class ShariffPlugin extends GenericPlugin {
 		$selectedLanguage = $press->getSetting('selectedLanguage');
 		$selectedTheme = $press->getSetting('selectedTheme');
 		$backendUrl = $press->getSetting('backend');
+		$baseUrl = $request->getBaseUrl();
 	
 		$output .= '
-		<link rel="stylesheet" href="'. Request::getBaseUrl() .'/'. $this->getPluginPath().'/shariff.min.css" type="text/css" />
+		<link rel="stylesheet" href="'. $baseUrl .'/'. $this->getPluginPath().'/shariff.min.css" type="text/css" />
 		<div class="shariff" data-lang="'. $selectedLanguage.'"
 		data-services="['.$dataServicesString.']"  
 		data-backend-url="'.$backendUrl.'" 
 		data-theme="'.$selectedTheme.'" 
-		data-url="'. Request::getBaseUrl() .'">
+		data-url="'. $baseUrl .'">
 		</div> 
-		<script src="'. Request::getBaseUrl() .'/'. $this->getPluginPath().'/shariff.complete.js"></script>';
+		<script src="'. $baseUrl .'/'. $this->getPluginPath().'/shariff.complete.js"></script>';
 		
 		return false;
 	}
@@ -184,34 +185,12 @@ class ShariffPlugin extends GenericPlugin {
 	}
 
 	/**
-	 * Get the filename of the ADODB schema for this plugin.
-	 * @return string Full path and filename to schema descriptor.
-	 *//*
-	function getInstallSchemaFile() {
-		return $this->getPluginPath() . '/schema.xml';
-	}*/
-
-	/**
 	 * @copydoc PKPPlugin::getTemplatePath
 	 */
 	function getTemplatePath() {
 		return parent::getTemplatePath() . 'templates/';
 	}
-	
-	/**
-	 * Get the name and the path of the css file.
-	 * @return string
-	 */
-	function getStyleSheet(){
-		return $this->getPluginPath() . '/css/shariff.min.css';
-	}
 
-	/**
-	 * Get the JavaScript URL for this plugin.
-	 *//*
-	function getJavaScriptURL($request) {
-		return $request->getBaseUrl() . '/' . $this->getPluginPath() . '/js';
-	}*/
 }
 
 ?>

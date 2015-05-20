@@ -101,20 +101,13 @@ class ShariffSettingsForm extends Form {
 	function initData() {
 		$press = $this->getPress();
 		$plugin = $this->getPlugin();
-		
-	/*	foreach($this->_getFormFields() as $fieldName => $fieldType) {
-			$this->setData($fieldName, $plugin->getSetting($press, $fieldName));
-		}
-	
-	*/
 	
 		if (isset($plugin)) {
 			
 			// array of available languages
 			$languages = array(
 				"en" => "plugins.generic.shariff.form.language.en",
-				"de" => "plugins.generic.shariff.form.language.de",
-			//	"es" => "plugins.generic.shariff.form.language.es"
+				"de" => "plugins.generic.shariff.form.language.de"
 			);
 			
 			// array of available themes
@@ -149,8 +142,6 @@ class ShariffSettingsForm extends Form {
 	 */
 	function readInputData() {
 		
-	//	$this->readUserVars(array_keys($this->_getFormFields()));
-		
 		$this->readUserVars(array(
 			'selectedLanguage',
 			'selectedTheme',
@@ -171,11 +162,6 @@ class ShariffSettingsForm extends Form {
 	function execute() {
 		$press = $this->getPress();
 		$plugin = $this->getPlugin();
-		
-	/*	foreach($this->_getFormFields() as $fieldName => $fieldType) {
-			$plugin->updateSetting($press, $fieldName, $this->getData($fieldName), $fieldType);
-		}
-	*/
 
 		$press->updateSetting('selectedLanguage', $this->getData('selectedLanguage'), 'string');
 		$press->updateSetting('selectedTheme', $this->getData('selectedTheme'), 'string');
@@ -187,23 +173,6 @@ class ShariffSettingsForm extends Form {
 		$press->updateSetting('backend', $this->getData('backend'), 'string');
 	
 	}
-	
-	//
-	// Private helper methods
-	//
-	function _getFormFields() {
-		return array(
-			'selectedLanguage' => 'string',
-			'selectedTheme' => 'string',
-			'facebook' => 'bool',
-			'twitter' => 'bool',
-			'googleplus' => 'bool',
-			'mail' => 'bool',
-			'info' => 'bool',
-			'backend' => 'string',
-		);
-	}
-	
 	
 	
 }

@@ -18,8 +18,6 @@
 
 <form class="pkp_form" id="shariffPluginSettingsForm" method="post" action="{url router=$smarty.const.ROUTE_COMPONENT op="plugin" category="generic" plugin=$pluginName verb="settings" tab="basic" save="true"}">
 
-	<input type="hidden" name="tab" value="settings" />
-
 	{fbvFormArea id="myText" class="border" title="plugins.generic.shariff.settings.title"}
 	
 		{* Choose social media services *}
@@ -31,8 +29,6 @@
 			{fbvElement type="checkbox" name="twitter" id="twitter" label="plugins.generic.shariff.form.twitter" checked=$twitter content=$content inline=true}
 		
 			{fbvElement type="checkbox" id="googleplus" label="plugins.generic.shariff.form.googleplus" checked=$googleplus content=$content inline=true}
-			
-		{*	{fbvElement type="checkbox" id="mail" label="plugins.generic.shariff.form.mail" checked=$mail content=$content inline=true} *}
 			
 			{fbvElement type="checkbox" id="info" label="plugins.generic.shariff.form.info" checked=$info content=$content inline=true}
 			
@@ -51,15 +47,6 @@
 			{fbvElement type="select" id="selectedTheme" from=$themes selected=$selectedTheme size=$fbvStyles.size.MEDIUM}
 			
 		{/fbvFormSection}
-		
-		{* Choose orientation 
-		{fbvFormSection list="true" label="plugins.generic.shariff.settings.orientation"}
-			
-			{fbvElement type="radio" name="orientation" id="horizontal" label="plugins.generic.shariff.form.orientation.horizontal" checked=$horizontal content=$content inline=true}
-			{fbvElement type="radio" name="orientation" id="vertical" label="plugins.generic.shariff.form.orientation.vertical" checked=$vertical content=$content inline=true}
-			
-		{/fbvFormSection}
-		*}
 		
 		{* Add backend url *}
 		{fbvFormSection label="plugins.generic.shariff.settings.backend"}
