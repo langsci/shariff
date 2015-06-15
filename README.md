@@ -1,6 +1,8 @@
 # Shariff plugin for OMP
 This plugin adds social media buttons to the footer of each page. It implements shariff by heise ([Github](https://github.com/heiseonline/shariff), [article](http://ct.de/shariff))  in [Open Monograph Press](https://pkp.sfu.ca/omp/).
 
+## Installation
+Clone this repo in your plugin folder or download the code and tar.gz it and upload it via the gui.
 
 ## Usage
 

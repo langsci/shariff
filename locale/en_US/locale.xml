@@ -14,7 +14,7 @@
 <locale name="en_US" full_name="U.S. English">
 	
 	<message key="plugins.generic.shariff.displayName">Shariff Plugin</message>
-	<message key="plugins.generic.shariff.description">Add social media buttons in c't style (heise.de/-2463330) to the footer of each page.</message>
+	<message key="plugins.generic.shariff.description"><![CDATA[Add social media buttons in <a title="heise article" href="http://heise.de/-2463330" target="_blank">c't style</a> to the footer of each page.]]></message>
 	<message key="plugins.generic.shariff.title">Shariff Plugin</message>
 	
 	<message key="plugins.generic.shariff.settings.title">Settings of the Shariff Plugin</message>
