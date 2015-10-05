@@ -90,17 +90,6 @@ class ShariffBlockPlugin extends BlockPlugin {
 	}
 
 	//
-	// Implement template methods from LazyLoadPlugin
-	//
-	/**
-	 * @copydoc LazyLoadPlugin::getEnabled()
-	 */
-	function getEnabled() {
-		$plugin =& $this->_getPlugin();
-		return $plugin->getEnabled();
-	}
-
-	//
 	// Implement template methods from BlockPlugin
 	//
 	/**
