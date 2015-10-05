@@ -114,7 +114,10 @@ class ShariffPlugin extends GenericPlugin {
 		$baseUrl = $request->getBaseUrl();
 		if ($params['smarty_include_tpl_file'] == 'core:common/headerHead.tpl') {
 			$stylesheets = $smarty->get_template_vars('stylesheets');
-			$shariffCSS = $baseUrl . '/' . $this->getPluginPath() . '/shariff.complete.css';
+			$shariffCSS = array(
+				$baseUrl . '/' . $this->getPluginPath() . '/shariff.complete.css',
+				$baseUrl . '/' . $this->getPluginPath() . '/shariff.omp.css'
+			);
 			array_unshift($stylesheets, $shariffCSS);
 			$smarty->assign('stylesheets', $stylesheets);
 		}
