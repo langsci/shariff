@@ -1,13 +1,13 @@
 <?php
 
 /**
- * @file plugins/generic/shariff/ShariffSettingsForm.inc.php
+ * @file ShariffSettingsForm.inc.php
  *
  * Copyright (c) 2015 Language Science Press
  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
  *
+ * @package plugins.generic.shariff
  * @class ShariffSettingsForm
- * @ingroup plugins_generic_Shariff
  *
  * @brief Form for adding/editing the settings for the Shariff plugin
  */
@@ -31,31 +31,13 @@ class ShariffSettingsForm extends Form {
 		$this->setPress($press);
 		$this->setPlugin($plugin);
 
+		$this->setData('pluginJavaScriptPath', $plugin->getPluginPath());
+
 		// Validation checks for this form
+		$this->addCheck(new FormValidator($this, 'selectedServices', 'required', 'plugins.generic.shariff.form.selectedServicesRequired'));
+		$this->addCheck(new FormValidator($this, 'position', 'required', 'plugins.generic.shariff.form.positionRequired'));
 		$this->addCheck(new FormValidatorPost($this));
 	}
-	
-	
-	/**
-	 * Fetch the form.
-	 * @see Form::fetch()
-	 * @param $request PKPRequest
-	 */
-	function fetch($request) {
-		$press = $this->getPress();
-		$plugin = $this->getPlugin();
-
-		$templateMgr = TemplateManager::getManager($request);
-		$templateMgr->assign('pluginName', $plugin->getName());
-		$templateMgr->assign('pluginBaseUrl', $request->getBaseUrl() . '/' . $plugin->getPluginPath());
-
-		foreach ($this->_data as $key => $value) {
-			$templateMgr->assign($key, $value);
-		}
-
-		return $templateMgr->fetch($plugin->getTemplatePath() . 'settings.tpl');
-	}
-	
 
 	//
 	// Getters and Setters
@@ -70,7 +52,7 @@ class ShariffSettingsForm extends Form {
 
 	/**
 	 * Set the Press.
-	 * @param Press
+	 * @param $press Press
 	 */
 	function setPress($press) {
 		$this->_press = $press;
@@ -86,7 +68,7 @@ class ShariffSettingsForm extends Form {
 
 	/**
 	 * Set the plugin.
-	 * @param ShariffPlugin $plugin
+	 * @param $plugin ShariffPlugin
 	 */
 	function setPlugin($plugin) {
 		$this->_plugin = $plugin;
@@ -96,63 +78,70 @@ class ShariffSettingsForm extends Form {
 	// Overridden template methods
 	//
 	/**
+	 * Fetch the form.
+	 * @see Form::fetch()
+	 * @param $request PKPRequest
+	 */
+	function fetch($request) {
+		$press = $this->getPress();
+		$plugin = $this->getPlugin();
+
+		// array of available themes
+		$themes = array(
+			SHARIFF_THEME_STANDARD => "plugins.generic.shariff.form.theme.standard",
+			SHARIFF_THEME_GREY => "plugins.generic.shariff.form.theme.grey",
+			SHARIFF_THEME_WHITE => "plugins.generic.shariff.form.theme.white"
+		);
+		// array of possible orientations
+		$orientations = array(
+			SHARIFF_ORIENTATION_H => "plugins.generic.shariff.form.orientation.horizontal",
+			SHARIFF_ORIENTATION_V => "plugins.generic.shariff.form.orientation.vertical"
+		);
+		$templateMgr =& TemplateManager::getManager();
+		$templateMgr->assign('pluginName', $plugin->getName());
+		$templateMgr->assign('themes', $themes);
+		$templateMgr->assign('orientations', $orientations);
+		$templateMgr->assign('js1', 'lib/pkp/js/lib/jquery/plugins/jquery.tablednd.js');
+		$templateMgr->assign('js2', 'lib/pkp/js/functions/tablednd.js');
+		return parent::fetch($request);
+	}
+
+	/**
 	 * Initialize form data from the plugin.
 	 */
 	function initData() {
 		$press = $this->getPress();
 		$plugin = $this->getPlugin();
-	
-		if (isset($plugin)) {
-			
-			// array of available languages
-			$languages = array(
-				"en" => "plugins.generic.shariff.form.language.en",
-				"de" => "plugins.generic.shariff.form.language.de"
-			);
-			
-			// array of available themes
-			$themes = array(
-				"standard" => "plugins.generic.shariff.form.theme.standard",
-				"grey" => "plugins.generic.shariff.form.theme.grey",
-				"white" => "plugins.generic.shariff.form.theme.white"
-			);
-			
-			// variables for the template
-			$this->_data = array(
-				'languages' => $languages,
-				'selectedLanguage' =>  $press->getSetting('selectedLanguage'),
-				'themes' => $themes,
-				'selectedTheme' =>  $press->getSetting('selectedTheme'),
-				'facebook' => $press->getSetting('facebook'),
-				'twitter' => $press->getSetting('twitter'),
-				'googleplus' => $press->getSetting('googleplus'),
-				'mail' => $press->getSetting('mail'),
-				'info' => $press->getSetting('info'),
-				'backend' => $press->getSetting('backend'),
-				
-			);
+		foreach($this->_getFormFields() as $fieldName => $fieldType) {
+			if ($fieldName == 'services') {
+				$services = $plugin->getSetting($press->getId(), $fieldName);
+				if (empty($services)) {
+					$services = array(
+						array("addthis" => "plugins.generic.shariff.form.service.addthis"),
+						array("facebook" => "plugins.generic.shariff.form.service.facebook"),
+						array("googleplus" => "plugins.generic.shariff.form.service.googleplus"),
+						array("info" => "plugins.generic.shariff.form.service.info"),
+						array("linkedin" => "plugins.generic.shariff.form.service.linkedin"),
+						array("mail" => "plugins.generic.shariff.form.service.mail"),
+						array("piterest" => "plugins.generic.shariff.form.service.pinterest"),
+						array("twitter" => "plugins.generic.shariff.form.service.twitter"),
+						array("whatsapp" => "plugins.generic.shariff.form.service.whatsapp"),
+						array("xing" => "plugins.generic.shariff.form.service.xing")
+					);
+				}
+				$this->setData($fieldName, $services);
+			} else {
+				$this->setData($fieldName, $plugin->getSetting($press->getId(), $fieldName));
+			}
 		}
-		
 	}
-
 
 	/**
 	 * Assign form data to user-submitted data.
 	 * @see Form::readInputData()
 	 */
 	function readInputData() {
-		
-		$this->readUserVars(array(
-			'selectedLanguage',
-			'selectedTheme',
-			'facebook',
-			'twitter',
-			'googleplus',
-			'mail',
-			'info',
-			'backend'
-		));
-	
+		$this->readUserVars(array_keys($this->_getFormFields()));
 	}
 
 	/**
@@ -162,18 +151,28 @@ class ShariffSettingsForm extends Form {
 	function execute() {
 		$press = $this->getPress();
 		$plugin = $this->getPlugin();
-
-		$press->updateSetting('selectedLanguage', $this->getData('selectedLanguage'), 'string');
-		$press->updateSetting('selectedTheme', $this->getData('selectedTheme'), 'string');
-		$press->updateSetting('facebook', $this->getData('facebook'), 'bool');
-		$press->updateSetting('twitter', $this->getData('twitter'), 'bool');
-		$press->updateSetting('googleplus', $this->getData('googleplus'), 'bool');
-		$press->updateSetting('mail', $this->getData('mail'), 'bool');
-		$press->updateSetting('info', $this->getData('info'), 'bool');
-		$press->updateSetting('backend', $this->getData('backend'), 'string');
-	
+		foreach($this->_getFormFields() as $fieldName => $fieldType) {
+			$plugin->updateSetting($press->getId(), $fieldName, $this->getData($fieldName), $fieldType);
+		}
 	}
-	
-	
+
+	//
+	// Private helper methods
+	//
+	/**
+	 * Get all form fields and their types
+	 * @return array
+	 */
+	function _getFormFields() {
+		return array(
+			'services' => 'object',
+			'selectedServices' => 'object',
+			'selectedTheme' => 'string',
+			'selectedOrientation' => 'string',
+			'backendUrl' => 'string',
+			'position' => 'string'
+		);
+	}
+
 }
 ?>

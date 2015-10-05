@@ -1,5 +1,5 @@
 # Shariff plugin for OMP
-This plugin adds social media buttons to the footer of each page. It implements shariff by heise ([Github](https://github.com/heiseonline/shariff), [article](http://ct.de/shariff))  in [Open Monograph Press](https://pkp.sfu.ca/omp/).
+This plugin adds social media buttons to you web site (to the footer of each page, sidebar or share tab on the book page). It implements shariff by heise ([Github](https://github.com/heiseonline/shariff), [article](http://ct.de/shariff))  in [Open Monograph Press](https://pkp.sfu.ca/omp/).
 
 ## Installation
 Clone this repo in your plugin folder or download the code and tar.gz it and upload it via the gui.
@@ -7,9 +7,16 @@ Clone this repo in your plugin folder or download the code and tar.gz it and upl
 ## Usage
 
 The front end can be used to display the buttons themselves. Available social media services are:
+- AddThis
 - Facebook
 - Twitter
 - Google+
+- LinkedIn
+- Pinterest
+- Whatsapp
+- XING
+- Mail
+- Info
 
 An info button that links to the heise article can be added.
 
@@ -17,9 +24,11 @@ An info button that links to the heise article can be added.
 
 ### Settings
 The following settings are available: 
-- select buttons (Facebook, Twitter, Google+, Info)
-- select language (Deutsch, English)
+- select buttons (AddThis, Facebook, Twitter, Google+, LinkedIn, Pinterest, Whatsapp, XING, Mail, Info)
+- order buttons
 - select theme (Standard, White, Grey)
+- select orientation (horizontal or vertical)
+- determine the position of the social media buttons on your web site
 - add backend-url
 
 ![Shariff settings](https://raw.githubusercontent.com/langsci/lsp-artwork/master/shariff/shariff-settings.PNG)
