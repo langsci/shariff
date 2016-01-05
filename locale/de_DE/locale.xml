@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE locale SYSTEM "../../../../../lib/pkp/dtd/locale.dtd">
+
+<!--
+  * locale/de_DE/locale.xml
+  *
+  * Copyright (c) 2015 Language Science Press
+  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
+  *
+  * Localization strings for the de_DE (Deutsch (Deutschland)) locale.
+  * Please contact Marco Tullney, marco.tullney@fu-berlin.de, with any questions regarding this translation.
+  -->
+
+<locale name="de_DE" full_name="Deutsch (Deutschland)">
+	
+	<message key="plugins.generic.shariff.displayName">Shariff-Plug-In</message>
+	<message key="plugins.generic.shariff.description"><![CDATA[Social-Media-Buttons im <a title="heise article" href="http://heise.de/-2463330" target="_blank">c't-Stil</a> zur Website hinzufügen.]]></message>
+	<message key="plugins.generic.shariff.title">Shariff-Plug-In</message>
+	
+	<message key="plugins.generic.shariff.block.displayName">Shariff-Block-Plug-In</message>
+	<message key="plugins.generic.shariff.block.description"><![CDATA[Social-Media-Buttons im <a title="heise article" href="http://heise.de/-2463330" target="_blank">c't-Stil</a> zur Sidebar hinzufügen.]]></message>
+	
+	<message key="plugins.generic.shariff.settings.title">Einstellungen des Shariff-Plug-In</message>
+	<message key="plugins.generic.shariff.settings">Einstellungen</message>
+	<message key="plugins.generic.shariff.settings.intro">Intro.</message>
+	
+	<message key="plugins.generic.shariff.settings.services">Dienste</message>
+	<message key="plugins.generic.shariff.settings.theme">Thema</message>
+	<message key="plugins.generic.shariff.settings.orientation">Ausrichtung</message>
+	<message key="plugins.generic.shariff.settings.language">Sprache</message>
+	<message key="plugins.generic.shariff.settings.backend">Backend-URL</message>
+	<message key="plugins.generic.shariff.settings.backend.info">Nur für Administrator/innen: Fügen Sie den Ordner shariff-backend dem Stammverzeichnis Ihrer OMP-Installation hinzu, passen Sie die Domain in shariff.json an und machen Sie den Ordner cache lesbar. Fügen Sie die Backend-URL hier nach folgendem Muster ein: "http://my-press.de/shariff-backend".</message>
+	<message key="plugins.generic.shariff.settings.buttonsPosition">Position</message>
+	<message key="plugins.generic.shariff.settings.buttonsPosition.footer">In der Fußzeile.</message>
+	<message key="plugins.generic.shariff.settings.buttonsPosition.bookView">Bei der Buchanzeige.</message>
+	<message key="plugins.generic.shariff.settings.buttonsPosition.block">Als Block in der Sidebar.</message>
+
+	<message key="plugins.generic.shariff.form.service.addthis">AddThis</message>
+	<message key="plugins.generic.shariff.form.service.facebook">Facebook</message>
+	<message key="plugins.generic.shariff.form.service.googleplus">Google+</message>
+	<message key="plugins.generic.shariff.form.service.info">Info</message>
+	<message key="plugins.generic.shariff.form.service.linkedin">LinkedIn</message>
+	<message key="plugins.generic.shariff.form.service.mail">Mail</message>
+	<message key="plugins.generic.shariff.form.service.pinterest">Pinterest</message>
+	<message key="plugins.generic.shariff.form.service.twitter">Twitter</message>
+	<message key="plugins.generic.shariff.form.service.whatsapp">Whatsapp</message>
+	<message key="plugins.generic.shariff.form.service.xing">XING</message>
+	
+	<message key="plugins.generic.shariff.form.theme">Wählen Sie ein grafisches Thema</message>
+	<message key="plugins.generic.shariff.form.theme.standard">Standard</message>
+	<message key="plugins.generic.shariff.form.theme.grey">Grau</message>
+	<message key="plugins.generic.shariff.form.theme.white">Weiß</message>
+	
+	<message key="plugins.generic.shariff.form.orientation">Wählen Sie eine Ausrichtung</message>
+	<message key="plugins.generic.shariff.form.orientation.vertical">vertikal</message>
+	<message key="plugins.generic.shariff.form.orientation.horizontal">horizontal</message>
+
+	<message key="plugins.generic.shariff.form.saved">Ihre Änderungen in den Einstellungen des Shariff-Plug-Ins sind gespeichert worden.</message>
+
+	<message key="plugins.generic.shariff.form.selectedServicesRequired">Bitte wählen Sie die Dienste, die Sie ermöglichen möchten.</message>
+	<message key="plugins.generic.shariff.form.positionRequired">Bitte wählen Sie die Position der Social-Media-Buttons.</message>
+</locale>
