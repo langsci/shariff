@@ -25,12 +25,15 @@
 	<message key="plugins.generic.shariff.settings.intro">I am an intro.</message>
 	
 	<message key="plugins.generic.shariff.settings.services">Services</message>
+	<message key="plugins.generic.shariff.settings.theme">Theme</message>
+	<message key="plugins.generic.shariff.settings.orientation">Orientation</message>
 	<message key="plugins.generic.shariff.settings.language">Language</message>
 	<message key="plugins.generic.shariff.settings.backend">Backend URL</message>
 	<message key="plugins.generic.shariff.settings.backend.info">Only for admin: Add the shariff-backend folder to the root of your OMP installation, change the domain in shariff.json and make the cache folder readable. Insert the path here like "http://my-press.de/shariff-backend".</message>
-	<message key="plugins.generic.shariff.settings.theme">Theme</message>
-	<message key="plugins.generic.shariff.settings.orientation">Orientation</message>
 	<message key="plugins.generic.shariff.settings.buttonsPosition">Position</message>
+	<message key="plugins.generic.shariff.settings.buttonsPosition.footer">In the footer.</message>
+	<message key="plugins.generic.shariff.settings.buttonsPosition.bookView">On the book view page.</message>
+	<message key="plugins.generic.shariff.settings.buttonsPosition.block">As block in the sidebar.</message>
 
 	<message key="plugins.generic.shariff.form.service.addthis">AddThis</message>
 	<message key="plugins.generic.shariff.form.service.facebook">Facebook</message>
@@ -52,13 +55,8 @@
 	<message key="plugins.generic.shariff.form.orientation.vertical">vertical</message>
 	<message key="plugins.generic.shariff.form.orientation.horizontal">horizontal</message>
 
-	<message key="plugins.generic.shariff.settings.buttonsPosition.footer">In the footer.</message>
-	<message key="plugins.generic.shariff.settings.buttonsPosition.bookView">On the book view page.</message>
-	<message key="plugins.generic.shariff.settings.buttonsPosition.block">As block in the sidebar.</message>
-		
 	<message key="plugins.generic.shariff.form.saved">Your changes in the Shariff Plugin Settings have been saved.</message>
 
 	<message key="plugins.generic.shariff.form.selectedServicesRequired">Please choose the services you would like to provide.</message>
 	<message key="plugins.generic.shariff.form.positionRequired">Please choose the position where the social media buttons should be displayed.</message>
-	
 </locale>
