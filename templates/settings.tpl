@@ -75,7 +75,7 @@
 		{* Add backend url *}
 		{fbvFormSection label="plugins.generic.shariff.settings.backend"}
 			<p class="pkp_help">{translate key="plugins.generic.shariff.settings.backend.info"}</p>
-			{fbvElement type="text" id="backend" value=$backend maxlength="100" size=$fbvStyles.size.MEDIUM}
+			{fbvElement type="text" id="backendUrl" value=$backendUrl maxlength="100" size=$fbvStyles.size.MEDIUM}
 		{/fbvFormSection}
 
 	{/fbvFormArea}
