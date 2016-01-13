@@ -14,7 +14,7 @@
 		data-orientation="{$smarty.const.SHARIFF_ORIENTATION_V}">
 	</div>
 	<script>
-		$function(){ldelim}
+		$(function(){ldelim}
 			document.getElementsByClassName("shariff")[0].setAttribute("data-url", window.location.href);
 		{rdelim});
 	</script>
